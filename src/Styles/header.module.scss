@@ -1,0 +1,71 @@
+.header {
+  position: sticky;
+  top: 0;
+  background-color: #fff;
+  border-bottom: #ECF3FF 1px solid;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  z-index: 1000;
+}
+#catalogBtn {
+  img {
+    margin-right: calc(5px + (10 - 5) * ((100vw - 320px) / (1440 - 320)));;
+  }
+  height:  calc(20px + (40 - 20) * ((100vw - 320px) / (1440 - 320)));
+  width: calc(40px + (115 - 40) * ((100vw - 320px) / (1440 - 320)));
+  background: #FF7700;
+  color: white;
+  border-radius: 5px;
+  border: none;
+  border: 1.5px solid #FF7700;
+  border-radius: 5px;
+  padding: 10px 15px; /* Отступы внутри кнопки */
+  font-size: clamp(8px, 1vw, 16px); /* Размер текста */
+
+  cursor: pointer; /* Курсор при наведении */
+  transition: background-color 0.3s; /* Плавный переход цвета фона */
+  &:hover {
+      background-color: darkorange; /* Цвет фона при наведении */
+  }
+
+}
+.form {
+  display: inline-flex;
+  border-radius: 5px; /* Скругление углов */
+  input {
+    width: calc(200px + (600 - 400) * ((100vw - 320px) / (1440 - 320)));; /* Ширина */
+    height:calc(20px + (40 - 20) * ((100vw - 320px) / (1440 - 320))); /* Высота */
+    border: 1.5px solid #FF7700; /* Граница */
+    font-size: 16px; /* Размер шрифта */
+    outline: none; /* Убираем обводку при фокусе */
+    transition: border-color 0.3s; /* Плавный переход цвета границы */
+
+    &:focus {
+        border-color: #FF4500; /* Цвет границы при фокусе */
+    }
+  }
+  
+}
+#logo {
+  display: inline-flex;
+  align-items: center;
+  .logo {
+    margin-right: 1vw;
+    height:  calc(25px + (53 - 25) * ((100vw - 320px) / (1440 - 320)));
+  }
+  .logoText {
+    font-family: 'Jost';
+    font-style: normal;
+    font-weight: 700;
+    font-size: calc(15px + (30 - 15) * ((100vw - 320px) / (1440 - 320)));
+  }
+}
+
+
+
+
+// calc(32px + (32 - 24) * ((100vw - 320px) / (1440 - 320)));
+//
