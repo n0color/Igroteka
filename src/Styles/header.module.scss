@@ -1,71 +1,108 @@
+
 .header {
   position: sticky;
   top: 0;
+  height: 100px;
   background-color: #fff;
-  border-bottom: #ECF3FF 1px solid;
+  border-bottom: #ecf3ff 1px solid;
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px 20px;
+  justify-content: center; 
+  align-items: center; 
+  padding: 10px 20px; 
   z-index: 1000;
-}
-#catalogBtn {
-  img {
-    margin-right: calc(5px + (10 - 5) * ((100vw - 320px) / (1440 - 320)));;
-  }
-  height:  calc(20px + (40 - 20) * ((100vw - 320px) / (1440 - 320)));
-  width: calc(40px + (115 - 40) * ((100vw - 320px) / (1440 - 320)));
-  background: #FF7700;
-  color: white;
-  border-radius: 5px;
-  border: none;
-  border: 1.5px solid #FF7700;
-  border-radius: 5px;
-  padding: 10px 15px; /* Отступы внутри кнопки */
-  font-size: clamp(8px, 1vw, 16px); /* Размер текста */
+  font-family: 'Jost', sans-serif;
 
-  cursor: pointer; /* Курсор при наведении */
-  transition: background-color 0.3s; /* Плавный переход цвета фона */
-  &:hover {
-      background-color: darkorange; /* Цвет фона при наведении */
+  .headerContainer {
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    width: 100%; 
+    max-width: 1200px; 
+    padding: 0 20px; 
+    gap: 20px;
   }
 
-}
-.form {
-  display: inline-flex;
-  border-radius: 5px; /* Скругление углов */
-  input {
-    width: calc(200px + (600 - 400) * ((100vw - 320px) / (1440 - 320)));; /* Ширина */
-    height:calc(20px + (40 - 20) * ((100vw - 320px) / (1440 - 320))); /* Высота */
-    border: 1.5px solid #FF7700; /* Граница */
-    font-size: 16px; /* Размер шрифта */
-    outline: none; /* Убираем обводку при фокусе */
-    transition: border-color 0.3s; /* Плавный переход цвета границы */
+  .logoContainer {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    .logo {
+      width: calc(2vw + 20px); 
+      max-width: 55px;
+      min-width: 30px; 
+      height: auto;
+      margin-right: 10px;
+    }
+    .logoText {
+      font-size: clamp(16px, 2vw, 30px);
+      font-weight: 700;
+      color: var(--black);
 
-    &:focus {
-        border-color: #FF4500; /* Цвет границы при фокусе */
     }
   }
-  
-}
-#logo {
-  display: inline-flex;
-  align-items: center;
-  .logo {
-    margin-right: 1vw;
-    height:  calc(25px + (53 - 25) * ((100vw - 320px) / (1440 - 320)));
+  .catalogBtn,
+  .storeBtn {
+    display: flex;
+    align-items: center; 
   }
-  .logoText {
-    font-family: 'Jost';
-    font-style: normal;
-    font-weight: 700;
-    font-size: calc(15px + (30 - 15) * ((100vw - 320px) / (1440 - 320)));
+  .storeBtn {
+    margin-left: 3.6458vw;
+    text-decoration: none;
+    color: var(--black);
+    font-size: 16px;
+    font-weight: 500;
+    img {
+      margin-right: 5px;
+    }
+  }
+  .catalogBtn {
+    display: inline-block;
+    width: 115px;
+    height: 40px;
+    background-color: var(--orange-main);
+    color: white;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 10px;
+    text-decoration: none;
+    min-width: 115px;
+    img {
+      margin-right: 5px;
+    }
+  }
+  .form {
+    border-radius: 5px;
+    overflow: hidden;
+    box-sizing: border-box;
+    border-radius: 5px;
+    display: flex; 
+    align-items: center; 
+    height: 40px;
+    width: calc(56.77vw + 20px);
+    max-width: 1090px;
+    min-width: 450px; 
+
+    .searchPanel {
+      border-radius: 5px 0 0 5px;
+      height: 100%; 
+      padding: 0;
+      padding-left: 5px; 
+      outline: none;
+      border: 1.5px solid var(--orange-main);
+      font-size: 16px;
+      box-sizing: border-box; 
+      width: 100%;
+    }
+
+    .searchBtn {
+      border-radius: 0 5px 5px 0;
+      height: 100%; 
+      width: 40px;
+      padding: 0; 
+      border: none; 
+      background-color: var(--orange-main); // Цвет фона для кнопки, если нужно
+      color: #fff; 
+      cursor: pointer;
+    }
   }
 }
-
-
-
-
-// calc(32px + (32 - 24) * ((100vw - 320px) / (1440 - 320)));
-//

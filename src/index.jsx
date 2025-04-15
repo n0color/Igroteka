@@ -9,6 +9,7 @@ import {
 
 import App from './main.jsx'
 import Catalog from './Pages/Catalog.jsx';
+import Store from './Pages/store.jsx';
 
 const Router = createBrowserRouter([
   {
@@ -18,6 +19,10 @@ const Router = createBrowserRouter([
   {
     path: '/catalog',
     element: <Catalog />
+  },
+  {
+    path: '/store',
+    element: <Store />
   },
 ])
 

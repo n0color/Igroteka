@@ -1,7 +1,7 @@
 
 import { useState } from "react";
 import logo from "../../public/logo.svg";
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import headerStyle from '../Styles/header.module.scss';
 
 export default function Header({ currentRoute }) {
@@ -15,27 +15,27 @@ export default function Header({ currentRoute }) {
 
   return (
     <header className={headerStyle.header}>
-      <div>
-        <span id={headerStyle.logo}>
+      <div className={headerStyle.headerContainer}>
+        <Link to={"/"} className={headerStyle.logoContainer}>
           <img className={headerStyle.logo} src={logo} alt="Igroteka logo" />
           <span className={headerStyle.logoText}>IGROTEKA</span>
-        </span>
-        <button id={headerStyle.catalogBtn}>
+        </Link>
+        <Link className={headerStyle.catalogBtn} to={"/catalog"}>
           <img src="public/mini-line.svg" />
-          Каталог</button>
+          Каталог</Link>
         <form onSubmit={handleSearch} className={headerStyle.form}>
-          <input   
+          <input className={headerStyle.searchPanel}   
             type="text" 
             value={searchTerm} 
             onChange={(e) => setSearchTerm(e.target.value)} 
             placeholder="Искать игру мечты тут!" 
           />
-          <button type="submit">Поиск</button>
+          <button type="submit" className={headerStyle.searchBtn}><img src="public/search.svg"/></button>
         </form>
-        <span>
+        <Link className={headerStyle.storeBtn} to={"/store"}>
           <img src="public/cart.svg" />
           <span>Корзина</span>
-        </span>
+        </Link>
       </div>
       <span>{currentRoute}</span>
 
