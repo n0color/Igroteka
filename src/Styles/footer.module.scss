@@ -1,23 +1,39 @@
 .footer {
+  overflow: hidden;
   background-color: #F4F7FB;
   font-family: 'Jost', sans-serif;
+
   .Subscribe {
     background-color: var(--orange-main);
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100px;
+    padding: 0 20px; // Добавляем отступы для мобильных устройств
+    @media (max-width: 768px) {
+      font-size: 16px; // Уменьшаем размер шрифта
+      flex-direction: column;
+    }
     span {
       width: 380px;
-      font-size: 18px;
+      font-size: clamp(12px, 2vw, 18px);
       line-height: 26px;
       text-transform: uppercase;
       font-weight: 600;
       color: #FFFFFF;
-      margin-right: 150px
+      margin-right: 150px;
+
+      @media (max-width: 768px) {
+        margin-right: 0; // Убираем правый отступ
+        text-align: center; // Центрируем текст
+        margin-bottom: 10px; // Добавляем отступ снизу
+      }
     }
+
     form {
       overflow: hidden;
+      display: flex;
+      
       input {
         outline: none;
         width: 410px;
@@ -25,58 +41,92 @@
         background: rgba(255, 255, 255, 0.2);
         border-radius: 5px;
         border: none;
+        margin-right: 20px;
         color: #FFFFFF;
         &::placeholder {
           color: #FFFFFF;
         }
-        margin-right: 20px;
+        @media (max-width: 768px) {
+          width: 100%; // Делаем ширину адаптивной
+          max-width: 300px; // Ограничиваем максимальную ширину
+          margin-right: 10px; // Уменьшаем отступ
+          height: 30px;
+        }
       }
+
       button {
         height: 50px;
         width: 140px;
-        height: 53px;
         background: #FFFFFF;
         border-radius: 5px;
         color: var(--orange-main);
         border: none;
+
+        @media (max-width: 768px) {
+          width: auto; // Делаем ширину кнопки адаптивной
+          flex-grow: 1; // Позволяем кнопке занимать доступное пространство
+          height: 30px;
+        }
       }
     }
   }
+
   .footerContent {
     margin-left: auto;
     margin-right: auto;
-    width: 1100px;
+    width: calc(38.021vw + 170px);
     h3 {
       font-size: 30px;
       margin-top: 22px;
       margin-bottom: 22px;
+
     }
+
     .footerContainer {
       display: flex;
-      justify-content:space-between;
-      .catalog{
+      justify-content: space-between;
+      @media (max-width:480px) {
+        justify-content: space-around;
+      }
+      .catalog {
         display: flex;
         flex-direction: column;
+        @media (max-width: 768px) {
+          margin-right: 24px;
+        }
         h4 {
           font-size: 18px;
           font-weight: 500;
-
           margin: 0px;
           margin-bottom: 20px;
-          
+
+          @media (max-width: 768px) {
+            font-size: 16px; // Уменьшаем размер заголовка каталога
+
+          }
         }
+
         a {
           color: #5D6C7B;
           text-decoration: none;
           margin-bottom: 10px;
+
           &:hover {
             color: #4B5A63;
           }
+
+          @media (max-width: 768px) {
+            font-size: 12px; // Уменьшаем размер шрифта ссылок
+            margin-bottom: 8px; // Уменьшаем отступ между ссылками
+          }
         }
-      } 
+        span {
+          @media (max-width: 768px) {
+            font-size: 12px; // Уменьшаем размер шрифта ссылок
+            margin-bottom: 8px; // Уменьшаем отступ между ссылками
+          }
+        }
+      }
     }
   }
 }
-
-
-

@@ -22,7 +22,7 @@ export default function Header({ currentRoute }) {
         </Link>
         <Link className={headerStyle.catalogBtn} to={"/catalog"}>
           <img src="public/mini-line.svg" />
-          Каталог</Link>
+          <span>Каталог</span></Link>
         <form onSubmit={handleSearch} className={headerStyle.form}>
           <input className={headerStyle.searchPanel}   
             type="text" 
@@ -33,7 +33,7 @@ export default function Header({ currentRoute }) {
           <button type="submit" className={headerStyle.searchBtn}><img src="public/search.svg"/></button>
         </form>
         <Link className={headerStyle.storeBtn} to={"/store"}>
-          <img src="public/cart.svg" />
+          <img src="public/cart.svg"/>
           <span>Корзина</span>
         </Link>
       </div>

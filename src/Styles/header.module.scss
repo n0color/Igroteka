@@ -1,4 +1,3 @@
-
 .header {
   position: sticky;
   top: 0;
@@ -8,7 +7,7 @@
   display: flex;
   justify-content: center; 
   align-items: center; 
-  padding: 10px 20px; 
+  padding: 0.521vw 1.42vw; 
   z-index: 1000;
   font-family: 'Jost', sans-serif;
 
@@ -19,90 +18,215 @@
     width: 100%; 
     max-width: 1200px; 
     padding: 0 20px; 
-    gap: 20px;
-  }
+    gap: 0.521vw;
 
-  .logoContainer {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    .logo {
-      width: calc(2vw + 20px); 
-      max-width: 55px;
-      min-width: 30px; 
-      height: auto;
-      margin-right: 10px;
+    .logoContainer {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+
+      .logo {
+        width: calc(2vw + 20px); 
+        max-width: 55px;
+        min-width: 30px; 
+        height: auto;
+        margin-right: 10px;
+      }
+
+      .logoText {
+        font-size: clamp(16px, 2vw, 30px);
+        font-weight: 700;
+        color: var(--black);
+      }
     }
-    .logoText {
-      font-size: clamp(16px, 2vw, 30px);
-      font-weight: 700;
+
+    .catalogBtn,
+    .storeBtn {
+      display: flex;
+      align-items: center; 
+    }
+
+    .storeBtn {
+      margin-left: 3.6458vw;
+      text-decoration: none;
       color: var(--black);
-
-    }
-  }
-  .catalogBtn,
-  .storeBtn {
-    display: flex;
-    align-items: center; 
-  }
-  .storeBtn {
-    margin-left: 3.6458vw;
-    text-decoration: none;
-    color: var(--black);
-    font-size: 16px;
-    font-weight: 500;
-    img {
-      margin-right: 5px;
-    }
-  }
-  .catalogBtn {
-    display: inline-block;
-    width: 115px;
-    height: 40px;
-    background-color: var(--orange-main);
-    color: white;
-    text-align: center;
-    line-height: 40px;
-    border-radius: 10px;
-    text-decoration: none;
-    min-width: 115px;
-    img {
-      margin-right: 5px;
-    }
-  }
-  .form {
-    border-radius: 5px;
-    overflow: hidden;
-    box-sizing: border-box;
-    border-radius: 5px;
-    display: flex; 
-    align-items: center; 
-    height: 40px;
-    width: calc(56.77vw + 20px);
-    max-width: 1090px;
-    min-width: 450px; 
-
-    .searchPanel {
-      border-radius: 5px 0 0 5px;
-      height: 100%; 
-      padding: 0;
-      padding-left: 5px; 
-      outline: none;
-      border: 1.5px solid var(--orange-main);
       font-size: 16px;
-      box-sizing: border-box; 
-      width: 100%;
+      font-weight: 500;
+
+      img {
+        margin-right: 5px;
+      }
+      @media (max-width: 480px) {
+        img {
+          width: 40px;
+        }
+        span {
+          display: none;
+        }
+      }
+
     }
 
-    .searchBtn {
-      border-radius: 0 5px 5px 0;
-      height: 100%; 
-      width: 40px;
-      padding: 0; 
-      border: none; 
-      background-color: var(--orange-main); // Цвет фона для кнопки, если нужно
-      color: #fff; 
-      cursor: pointer;
+    .catalogBtn {
+      display: inline-block;
+      width: 115px;
+      height: 40px;
+      background-color: var(--orange-main);
+      color: white;
+      text-align: center;
+      line-height: 40px;
+      border-radius: 10px;
+      text-decoration: none;
+
+      img {
+        margin-right: 5px;
+      }
+      @media (max-width: 480px) {
+        img {
+          height: 28px;
+          width: 40px;
+          border-radius: 5px;
+        }
+        span {
+          display: none;
+        }
+      }
+    }
+
+    .form {
+      border-radius: 5px;
+      overflow: hidden;
+      box-sizing: border-box;
+      display: flex; 
+      align-items: center; 
+      height: 40px;
+      width: calc(56.77vw + 20px);
+      max-width: 1090px;
+      min-width: 350px; 
+
+      .searchPanel {
+        border-radius: 5px 0 0 5px;
+        height: 100%; 
+        padding-left: 5px; 
+        outline: none;
+        border: 1.5px solid var(--orange-main);
+        font-size: 16px;
+        box-sizing: border-box; 
+        width: 100%;
+        min-width: 200px; 
+        &::placeholder {
+          @media (max-width: 480px) {
+            font-size: 14px;
+          }
+        }
+      }
+
+      .searchBtn {
+        border-radius: 0 5px 5px 0;
+        height: 100%; 
+        width: 40px;
+        padding: 0; 
+        border: none; 
+        background-color: var(--orange-main);
+        color: #fff; 
+        cursor: pointer;
+      }
+    }
+  }
+
+  // Медиа-запросы для адаптивности
+  @media (max-width: 1200px) {
+    padding: 10px;
+
+    .headerContainer {
+      padding: 0 10px; 
+      gap: 15px;
+
+      .logoText {
+        font-size: clamp(14px, 2vw, 28px);
+      }
+
+      .storeBtn,
+      .catalogBtn {
+        font-size: 14px;
+      }
+
+      .form {
+        width: calc(70vw + 20px);
+        min-width: auto; // Убираем минимальную ширину для меньших экранов
+      }
+      
+      .searchPanel {
+        font-size: 14px;
+      }
+      
+      .searchBtn {
+        width: 35px; // Уменьшаем размер кнопки
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    height: auto; // Позволяем высоте адаптироваться
+    padding: 5px;
+
+    .headerContainer {
+      flex-direction: column; // Переключаем на вертикальное выравнивание
+      gap: 10px;
+
+      .logoText {
+        font-size: clamp(12px, 2vw, 24px);
+      }
+
+      .storeBtn,
+      .catalogBtn {
+        font-size: 12px;
+        width: auto; // Делаем кнопки более гибкими
+        padding: 5px; // Добавляем немного отступов
+      }
+
+      .form {
+        width: calc(90vw - 20px); // Увеличиваем ширину формы
+        min-width: auto; // Убираем минимальную ширину
+      }
+      
+      .searchPanel {
+        font-size: 12px;
+      }
+      
+      .searchBtn {
+        width: 30px; // Уменьшаем размер кнопки
+      }
+    }
+  }
+
+  @media (max-width: 480px) {
+     padding: 5px;
+
+     .headerContainer {
+       gap: 5px; // Уменьшаем отступы
+
+       .logoText {
+         font-size: clamp(10px, 2vw, 20px);
+       }
+
+       .storeBtn,
+       .catalogBtn {
+         font-size: 10px; // Уменьшаем размер шрифта
+         padding: 3px; // Уменьшаем отступы
+       }
+
+       .form {
+         width: calc(95vw - 20px); // Увеличиваем ширину формы
+         min-width: auto; // Убираем минимальную ширину
+       }
+       .searchPanel {
+        font-size: 10px;
+      }
+      
+      .searchBtn {
+        width: 28px; // Уменьшаем размер кнопки
+      }
     }
   }
 }
