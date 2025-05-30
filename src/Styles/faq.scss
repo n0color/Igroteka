@@ -1,0 +1,109 @@
+// Variables
+$faq-text-dark: #333;
+$faq-text-light: #666;
+$faq-background: #fff;
+$faq-hover-color: #ff6b00;
+$faq-shadow: rgba(0, 0, 0, 0.1);
+
+// Mixins 
+@mixin transition($property) {
+  transition: $property 0.2s ease-out;
+}
+
+// Main FAQ Section
+.faq-section {
+  width: 80%;
+  max-width: 1400px;
+  margin: 0 auto;
+
+  h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 24px;
+    color: $faq-text-dark;
+  }
+
+  // FAQ List Container
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    // Individual FAQ Item
+    .faq-item {
+      background: $faq-background;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 4px $faq-shadow;
+      cursor: pointer;
+
+      // Question Section
+      .faq-question {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        background: #f8f8f8;
+        @include transition(background-color);
+
+        h3 {
+          margin: 0;
+          font-size: 16px;
+          color: $faq-text-dark;
+        }
+
+        .toggle-icon {
+          font-size: 24px;
+          color: $faq-text-light;
+          @include transition(transform);
+        }
+      }
+
+      // Answer Section
+      .faq-answer {
+        max-height: 0;
+        overflow: hidden;
+        @include transition(max-height);
+        background: $faq-background;
+
+        p {
+          margin: 0;
+          padding: 20px;
+          color: $faq-text-light;
+          line-height: 1.5;
+        }
+      }
+
+      // Open State
+      &.open {
+        .faq-question {
+          background: $faq-hover-color;
+          
+          h3 {
+            color: $faq-background;
+          }
+
+          .toggle-icon {
+            color: $faq-background;
+            transform: rotate(180deg);
+          }
+        }
+
+        .faq-answer {
+          max-height: 300px;
+        }
+      }
+
+      // Hover State
+      &:hover {
+        .faq-question {
+          background: $faq-hover-color;
+          
+          h3, .toggle-icon {
+            color: $faq-background;
+          }
+        }
+      }
+    }
+  }
+} 

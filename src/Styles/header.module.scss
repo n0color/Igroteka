@@ -1,231 +1,217 @@
 .header {
   position: sticky;
   top: 0;
-  height: 100px;
-  background-color: #fff;
+  min-height: 70px;
+  background-color: #FFF;
   border-bottom: #ecf3ff 1px solid;
   display: flex;
+  flex-direction: row;
   justify-content: center; 
   align-items: center; 
-  padding: 0.521vw 1.42vw; 
+  padding: 10px 20px; 
   z-index: 1000;
   font-family: 'Jost', sans-serif;
+  margin-bottom: 30px;
 
   .headerContainer {
     display: flex; 
     align-items: center; 
-    justify-content: center; 
+    justify-content: space-between; 
     width: 100%; 
     max-width: 1200px; 
-    padding: 0 20px; 
-    gap: 0.521vw;
+    gap: 20px;
 
     .logoContainer {
       display: flex;
       align-items: center;
       text-decoration: none;
+      flex-shrink: 0;
 
       .logo {
-        width: calc(2vw + 20px); 
-        max-width: 55px;
-        min-width: 30px; 
-        height: auto;
+        width: 40px;
+        height: 40px;
         margin-right: 10px;
       }
 
       .logoText {
-        font-size: clamp(16px, 2vw, 30px);
+        font-size: 24px;
         font-weight: 700;
         color: var(--black);
       }
     }
 
+    .navigation {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-grow: 1;
+      justify-content: space-between;
+      max-width: 900px;
+    }
+
     .catalogBtn,
     .storeBtn {
       display: flex;
-      align-items: center; 
-    }
-
-    .storeBtn {
-      margin-left: 3.6458vw;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 16px;
+      border-radius: 10px;
       text-decoration: none;
-      color: var(--black);
-      font-size: 16px;
       font-weight: 500;
+      font-size: 16px;
+      transition: all 0.3s ease;
+      white-space: nowrap;
+      flex-shrink: 0;
 
       img {
-        margin-right: 5px;
+        width: 24px;
+        height: 24px;
+        object-fit: contain;
       }
-      @media (max-width: 480px) {
-        img {
-          width: 40px;
-        }
-        span {
-          display: none;
-        }
-      }
-
     }
 
     .catalogBtn {
-      display: inline-block;
-      width: 115px;
-      height: 40px;
       background-color: var(--orange-main);
       color: white;
-      text-align: center;
-      line-height: 40px;
-      border-radius: 10px;
-      text-decoration: none;
 
-      img {
-        margin-right: 5px;
+      &:hover {
+        background-color: var(--orange-main);
       }
-      @media (max-width: 480px) {
-        img {
-          height: 28px;
-          width: 40px;
-          border-radius: 5px;
-        }
-        span {
-          display: none;
-        }
+    }
+
+    .storeBtn {
+      color: var(--black);
+      background-color: transparent;
+      border: 1px solid var(--orange-main);
+
+      &:hover {
+        background-color: var(--orange-main);
+        color: white;
       }
     }
 
     .form {
+      flex-grow: 1;
+      max-width: 600px;
+      min-width: 200px;
+      height: 45px;
+      display: flex;
       border-radius: 5px;
       overflow: hidden;
-      box-sizing: border-box;
-      display: flex; 
-      align-items: center; 
-      height: 40px;
-      width: calc(56.77vw + 20px);
-      max-width: 1090px;
-      min-width: 350px; 
 
       .searchPanel {
-        border-radius: 5px 0 0 5px;
-        height: 100%; 
-        padding-left: 5px; 
-        outline: none;
+        flex-grow: 1;
+        height: 95%;
+        padding: 0 16px;
         border: 1.5px solid var(--orange-main);
+        border-right: none;
+        border-radius: 5px 0 0 5px;
         font-size: 16px;
-        box-sizing: border-box; 
-        width: 100%;
-        min-width: 200px; 
+        outline: none;
+
         &::placeholder {
-          @media (max-width: 480px) {
-            font-size: 14px;
-          }
+          color: #999;
         }
       }
 
       .searchBtn {
-        border-radius: 0 5px 5px 0;
-        height: 100%; 
         width: 40px;
-        padding: 0; 
-        border: none; 
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         background-color: var(--orange-main);
-        color: #fff; 
+        border: none;
+        border-radius: 0 5px 5px 0;
         cursor: pointer;
+        transition: background-color 0.3s ease;
+
+        img {
+          width: 20px;
+          height: 20px;
+        }
+
+        &:hover {
+          background-color: var(--orange-main);
+        }
       }
     }
   }
 
-  // Медиа-запросы для адаптивности
-  @media (max-width: 1200px) {
-    padding: 10px;
+  .currentRoute {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #666;
+  }
 
+  @media (max-width: 900px) {
     .headerContainer {
-      padding: 0 10px; 
-      gap: 15px;
-
       .logoText {
-        font-size: clamp(14px, 2vw, 28px);
+        font-size: 20px;
       }
 
-      .storeBtn,
-      .catalogBtn {
-        font-size: 14px;
+      .navigation {
+        gap: 15px;
       }
 
-      .form {
-        width: calc(70vw + 20px);
-        min-width: auto; // Убираем минимальную ширину для меньших экранов
-      }
-      
-      .searchPanel {
+      .catalogBtn,
+      .storeBtn {
+        padding: 6px 12px;
         font-size: 14px;
-      }
-      
-      .searchBtn {
-        width: 35px; // Уменьшаем размер кнопки
       }
     }
   }
 
   @media (max-width: 768px) {
-    height: auto; // Позволяем высоте адаптироваться
-    padding: 5px;
+    padding: 10px;
 
     .headerContainer {
-      flex-direction: column; // Переключаем на вертикальное выравнивание
-      gap: 10px;
+      flex-direction: column;
+      gap: 15px;
 
-      .logoText {
-        font-size: clamp(12px, 2vw, 24px);
-      }
-
-      .storeBtn,
-      .catalogBtn {
-        font-size: 12px;
-        width: auto; // Делаем кнопки более гибкими
-        padding: 5px; // Добавляем немного отступов
+      .navigation {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
       }
 
       .form {
-        width: calc(90vw - 20px); // Увеличиваем ширину формы
-        min-width: auto; // Убираем минимальную ширину
-      }
-      
-      .searchPanel {
-        font-size: 12px;
-      }
-      
-      .searchBtn {
-        width: 30px; // Уменьшаем размер кнопки
+        order: -1;
+        min-width: 100%;
       }
     }
   }
 
   @media (max-width: 480px) {
-     padding: 5px;
-
-     .headerContainer {
-       gap: 5px; // Уменьшаем отступы
-
-       .logoText {
-         font-size: clamp(10px, 2vw, 20px);
-       }
-
-       .storeBtn,
-       .catalogBtn {
-         font-size: 10px; // Уменьшаем размер шрифта
-         padding: 3px; // Уменьшаем отступы
-       }
-
-       .form {
-         width: calc(95vw - 20px); // Увеличиваем ширину формы
-         min-width: auto; // Убираем минимальную ширину
-       }
-       .searchPanel {
-        font-size: 10px;
+    .headerContainer {
+      .navigation {
+        gap: 8px;
       }
-      
-      .searchBtn {
-        width: 28px; // Уменьшаем размер кнопки
+
+      .catalogBtn,
+      .storeBtn {
+        padding: 8px;
+        
+        span {
+          display: none;
+        }
+
+        img {
+          margin: 0;
+          width: 20px;
+          height: 20px;
+        }
+      }
+
+      .form {
+        .searchPanel {
+          font-size: 14px;
+          padding: 0 10px;
+
+          &::placeholder {
+            font-size: 14px;
+          }
+        }
       }
     }
   }

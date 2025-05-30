@@ -1,0 +1,283 @@
+.catalogPage {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+}
+
+.main {
+  flex: 1;
+  margin: 0 auto;
+  padding: 0 5% 0 5%;
+  width: 90%;
+}
+
+.breadcrumbs {
+  padding: 20px 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #666;
+
+  .breadcrumbLink {
+    color: var(--orange-main);
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .breadcrumbSeparator {
+    color: #999;
+  }
+
+  .breadcrumbCurrent {
+    color: #666;
+  }
+}
+
+.catalogContent {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.filters {
+  position: sticky;
+  top: 120px;
+  height: 90%;
+  width: 260px;
+  flex-shrink: 0;
+  background: #F8FAFF;
+  border-radius: 10px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+
+  .filterTitle {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: var(--black);
+  }
+
+  .filterSection {
+    margin-bottom: 15px;
+    border-bottom: 1px solid #ECF3FF;
+    padding-bottom: 15px;
+
+    &:last-child {
+      border-bottom: none;
+      margin-bottom: 20px;
+    }
+
+    h3 {
+      font-size: 14px;
+      font-weight: 500;
+      margin-bottom: 10px;
+      color: var(--black);
+    }
+
+    label {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 8px;
+      cursor: pointer;
+      font-size: 13px;
+      color: #666;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      &:hover {
+        color: var(--orange-main);
+      }
+
+      input[type="checkbox"] {
+        width: 14px;
+        height: 14px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+      }
+    }
+  }
+
+  .priceRange {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    input {
+      width: 90px;
+      height: 32px;
+      border: 1px solid #ECF3FF;
+      border-radius: 5px;
+      padding: 0 8px;
+      font-size: 13px;
+
+      &:focus {
+        border-color: var(--orange-main);
+        outline: none;
+      }
+    }
+
+    span {
+      color: #666;
+    }
+  }
+
+  .applyFiltersBtn {
+    background-color: var(--orange-main);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 16px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+
+    &:hover {
+      background-color: var(--orange-main);
+      opacity: 0.9;
+    }
+
+    &:active {
+      transform: translateY(1px);
+    }
+  }
+}
+
+.productsSection {
+  flex: 1;
+
+  .sortingBar {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    padding: 15px;
+    background: #F8FAFF;
+    border-radius: 10px;
+
+    span {
+      color: #666;
+      font-size: 14px;
+    }
+
+    .sortSelect {
+      padding: 8px 15px;
+      border: 1px solid #ECF3FF;
+      border-radius: 5px;
+      background: #fff;
+      font-size: 14px;
+      color: var(--black);
+      cursor: pointer;
+
+      &:focus {
+        border-color: var(--orange-main);
+        outline: none;
+      }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .catalogContent {
+    gap: 20px;
+  }
+
+  .filters {
+    width: 220px;
+    padding: 12px;
+
+    .filterTitle {
+      font-size: 15px;
+      margin-bottom: 12px;
+    }
+
+    .filterSection {
+      margin-bottom: 12px;
+      padding-bottom: 12px;
+
+      h3 {
+        font-size: 13px;
+        margin-bottom: 8px;
+      }
+
+      label {
+        font-size: 12px;
+        margin-bottom: 6px;
+      }
+    }
+
+    .priceRange input {
+      width: 80px;
+      height: 30px;
+      font-size: 12px;
+    }
+
+    .applyFiltersBtn {
+      padding: 8px 14px;
+      font-size: 13px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .catalogContent {
+    flex-direction: column;
+  }
+
+  .filters {
+    position: static;
+    width: 100%;
+    padding: 15px;
+  }
+
+  .priceRange {
+    input {
+      width: calc(50% - 15px);
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .main {
+    padding: 0 10px;
+  }
+
+  .breadcrumbs {
+    font-size: 12px;
+  }
+
+  .filters {
+    padding: 12px;
+
+    .filterTitle {
+      font-size: 14px;
+    }
+
+    .filterSection h3 {
+      font-size: 13px;
+    }
+
+    label {
+      font-size: 12px;
+    }
+  }
+
+  .sortingBar {
+    flex-direction: column;
+    align-items: flex-start;
+    
+    .sortSelect {
+      width: 100%;
+    }
+  }
+} 

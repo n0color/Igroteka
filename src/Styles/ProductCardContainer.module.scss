@@ -1,0 +1,87 @@
+.containerAll {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  h4 {
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 35px;
+  line-height: 51px;
+  text-transform: uppercase;
+  margin: 50px 10%; 
+  align-self: flex-start; 
+  color: var(--black);
+  @media (max-width: 1024px) {
+    font-size: 30px;
+  }
+  @media (max-width: 768px) {
+    font-size: 20px;
+  }
+  @media (max-width: 480px) {
+    font-size: 16px;
+  }
+  @media (max-width: 360px) {
+    font-size: 12px;
+  }
+
+  }
+}
+.container {
+  border: 2px dashed rgba(255, 255, 255, 0.72);
+  width: auto;
+  display: flex;
+  flex-wrap: wrap; /* Элементы будут переноситься на новую строку при нехватке места */
+  justify-content: center; /* Равные отступы между элементами */
+  gap: 15px;
+  margin: 50px 10%; 
+  @media (max-width: 960px) {
+    gap: 28px;
+    margin: 40px auto; 
+  }
+  @media (max-width: 720px) {
+    width: 85%;
+    gap: 15px;
+    margin: 30px auto; 
+  }
+  @media (max-width: 360px) {
+    width: 90%;
+    gap: 10px;
+    margin: 20px auto; 
+  }
+}
+.buttonShowAll {
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+  text-align: center;
+  text-decoration: none;
+  color: var(--orange-main);
+  border: 2px solid var(--orange-main); 
+  border-radius: 5px; 
+  font-size: 18px; 
+  transition: background-color 0.3s, color 0.3s;
+  width: 140px;
+  height: 50px;
+  @media (max-width: 960px) {
+    width: 130px;
+    height: 40px;
+    font-size: 16px; 
+  }
+  @media (max-width: 720px) {
+    width: 120px;
+    height: 40px;
+    font-size: 15px; 
+  }
+  @media (max-width: 360px) {
+    width: 100px;
+    height: 30px;
+    font-size: 14px; 
+  }
+  &:hover {
+    background-color: var(--orange-main); // Цвет фона при наведении
+    color: white; // Цвет текста при наведении
+  }
+}

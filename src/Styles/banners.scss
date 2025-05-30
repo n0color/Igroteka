@@ -1,0 +1,107 @@
+.banner {
+  width: 80%;
+  min-height: 370px;
+  height: auto;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 40px;
+  z-index: 1;
+
+  // Themes
+  &.atomic {
+    background: url('/atomic.png') no-repeat center left;
+    background-size: cover;
+  }
+
+  &.black-friday {
+    background: radial-gradient(circle, #444444 0%, #16171A 100%); 
+  }
+
+  // Banner Image
+  img {
+    position: absolute;
+    right: 5%;
+    top: 5%;
+    height: 90%;
+    max-width: 45%;
+    object-fit: contain;
+    z-index: 2;
+  }
+
+  // Content Section
+  .banner-content {
+    flex: 1;
+    z-index: 2;
+    color: #fff;
+
+    h1 {
+      font-size: 36px;
+      font-weight: bold;
+      margin: 0 0 20px;
+      max-width: 600px;
+    }
+
+    p {
+      font-size: 18px;
+      margin: 0 0 30px;
+      opacity: 0.8;
+    }
+
+    .banner-button {
+      display: inline-block;
+      padding: 12px 24px;
+      background: #fff;
+      color: #ff6b00;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: 500;
+      transition: background-color 0.2s;
+
+      &:hover {
+        background: #ff6b00;
+        color: #fff;
+      }
+    }
+  }
+
+  @media (max-width: 1024px) {
+    min-height: 300px;
+    padding: 20px;
+
+    img {
+      display: none; 
+    }
+
+    .banner-content {
+      h1 {
+        font-size: 24px;
+      }
+
+      p {
+        font-size: 16px;
+      }
+    }
+  }
+  // Mobile Styles
+  @media (max-width: 768px) {
+    min-height: 200px;
+    padding: 10px;
+
+    img {
+      display: none; 
+    }
+
+    .banner-content {
+      h1 {
+        font-size: 22px;
+      }
+
+      p {
+        font-size: 14px;
+      }
+    }
+  }
+}

@@ -7,14 +7,16 @@ import {
   Route, 
 } from 'react-router-dom';
 
-import App from './main.jsx'
-import Catalog from './Pages/Catalog.jsx';
-import Store from './Pages/store.jsx';
+import App from './Routes/main.jsx'
+import Catalog from './Routes/Catalog.jsx';
+import Store from './Routes/store.jsx';
+import ErrorPage404 from './Routes/errorPage404.jsx';
 
 const Router = createBrowserRouter([
   {
     path: '/',
-    element: <App />
+    element: <App />,
+    errorElement: <ErrorPage404 />,
   },
   {
     path: '/catalog',

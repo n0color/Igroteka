@@ -2,6 +2,7 @@
 :root {
   --black: #282739;
   --orange-main: #FF7700;
+  --gray: #5D6C7B;
 }
 body {
   margin: 0px;
@@ -9,11 +10,41 @@ body {
   font-family: 'Jost', sans-serif;
   font-style: normal;
   font-weight: 400;
+  height: 100vh;
+  overflow-x: hidden;
 }
 
 h1, h2, h3 {
   font-family: 'Jost', sans-serif;
   font-style: normal;
   font-weight: 700;
+}
+.errorh1 {
+  font-size: 32px;
+  @media (max-width: 1024px) {
+    font-size: 26px; // Уменьшаем размер шрифта
+  }
+  @media (max-width: 768px) {
+    font-size: 24px; // Уменьшаем размер шрифта
+  }
+  @media (max-width: 480px) {
+    font-size: 22px; // Уменьшаем размер шрифта
+  }
+  @media (max-width: 320px) {
+    font-size: 18px; // Уменьшаем размер шрифта
+  }
+}
+.button {
+  font-size: 1em;
+  background: none; 
+  border: none; 
+  color: inherit; 
+  font-family: 'Jost', sans-serif; 
+  font-weight: 700; 
+  cursor: pointer; 
+  text-decoration: underline; 
+  &:hover {
+    color: #007bff; 
+  }
 }
 
