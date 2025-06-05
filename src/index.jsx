@@ -9,9 +9,9 @@ import {
 
 import App from './Routes/main.jsx'
 import Catalog from './Routes/Catalog.jsx';
-import Store from './Routes/store.jsx';
-import ErrorPage404 from './Routes/errorPage404.jsx';
-
+import Product from './Routes/Product.jsx';
+import ErrorPage404 from './Routes/ErrorPage404.jsx';
+import Store from './Routes/Store.jsx';
 const Router = createBrowserRouter([
   {
     path: '/',
@@ -21,6 +21,10 @@ const Router = createBrowserRouter([
   {
     path: '/catalog',
     element: <Catalog />
+  },
+  {
+    path: '/catalog/:productid',
+    element: <Product />
   },
   {
     path: '/store',

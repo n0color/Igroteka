@@ -9,7 +9,7 @@ const Banner = ({ bannerContent }) => {
       <div className="banner-content">
         <h1>{title}</h1>
         {subtitle && <p>{subtitle}</p>}
-        <Link to="/catalog" className="banner-button">
+        <Link to="/catalog/13" className="banner-button">
           Перейти к товару
         </Link>
       </div>

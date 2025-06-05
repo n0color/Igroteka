@@ -11,7 +11,6 @@ export default function Catalog() {
   const query = queryString.parse(location.search);
 
   const handleApplyFilters = () => {
-    // Здесь будет логика применения фильтров
     console.log('Applying filters...');
   };
 
@@ -38,7 +37,7 @@ export default function Catalog() {
               <div className={styles.priceRange}>
                 <input type="number" placeholder="0" />
                 <span>—</span>
-                <input type="number" placeholder="55 000" />
+                <input type="number" placeholder="10 000" />
               </div>
             </div>
 
@@ -50,7 +49,7 @@ export default function Catalog() {
                 RPG
               </label>
               <label>
-                <input type="checkbox" value="FPS" />
+                <input type="checkbox" value="Онлайн" />
                 FPS
               </label>
               <label>

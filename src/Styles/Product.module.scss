@@ -1,0 +1,370 @@
+.productPageContainer {
+  max-width: 1700px;
+  width: 90%;
+  margin: auto;
+}
+
+// Хлебные крошки
+.breadcrumbs {
+  padding: 20px 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #666;
+
+  .breadcrumbLink {
+    color: var(--orange-main);
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .breadcrumbSeparator {
+    color: #999;
+  }
+
+  .breadcrumbCurrent {
+    color: #666;
+  }
+}
+
+// Верхний блок: картинка + инфо
+.productTop {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+  background: #fff;
+  border-radius: 24px;
+  box-shadow: 0 4px 24px #00000010;
+  padding: 40px 48px;
+  margin-bottom: 32px;
+
+  .productImage {
+    width: 420px;
+    height: 420px;
+    object-fit: cover;
+    border-radius: 12px;
+  }
+
+  .productInfo {
+    flex: 1;
+    min-width: 340px;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+
+    .productTitle {
+      font-size: 32px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: #222;
+      font-family: 'Jost', sans-serif;
+    }
+    .productMeta {
+      color: #B0B0B0;
+      font-size: 15px;
+      margin-bottom: 8px;
+    }
+    .productInStock {
+      color: #4BB543;
+      font-weight: 500;
+      font-size: 16px;
+      margin-bottom: 8px;
+    }
+    .productPriceRow {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 18px;
+      .oldPrice {
+        color: #B0B0B0;
+        font-size: 16px;
+        text-decoration: line-through;
+      }
+      .currentPrice {
+        color: #222;
+        font-weight: 700;
+        font-size: 28px;
+      }
+    }
+    .productForWho {
+      margin-bottom: 18px;
+      color: #B0B0B0;
+      font-size: 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      .btn {
+        padding: 10px 32px;
+        border-radius: 10px;
+        background: #fff;
+        color: #222;
+        font-weight: 500;
+        font-size: 16px;
+        margin-right: 0;
+        cursor: pointer;
+        border: 2px solid #FF7A00;
+        transition: background 0.2s, color 0.2s;
+        &.primary {
+          background: #FF7A00;
+          color: #fff;
+        }
+        &.secondary {
+          border: 2px solid var(--orange-main);
+          color: var(--orange-main);
+        }
+        &:hover {
+          background: #FF7A00;
+          color: #fff;
+        }
+      }
+    }
+    .productActions {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 12px;
+      .btn {
+        flex: 1;
+        border-radius: 10px;
+        padding: 18px 0;
+        font-size: 18px;
+        font-weight: 600;
+        cursor: pointer;
+        border: none;
+        transition: all 0.2s ease;
+        &.primary {
+          background: #FF7A00;
+          color: #fff;
+          
+          &:hover {
+            opacity: 0.9;
+          }
+        }
+        &.secondary {
+          background: #fff;
+          color: #FF7A00;
+          border: 2px solid #FF7A00;
+          
+          &:hover {
+            background: #FF7A00;
+            color: #fff;
+          }
+        }
+      }
+    }
+    .productLinks {
+      display: flex;
+      gap: 24px;
+      color: #B0B0B0;
+      font-size: 16px;
+      margin-bottom: 12px;
+      span {
+        cursor: pointer;
+        transition: color 0.2s ease;
+        
+        &:hover {
+          color: var(--orange-main);
+        }
+      }
+    }
+  }
+}
+
+// Навигация под карточкой
+.productNav {
+  display: flex;
+  justify-content: space-between;
+  color: #B0B0B0;
+  font-size: 15px;
+  margin-bottom: 32px;
+  .active {
+    color: #FF7A00;
+  }
+}
+
+// Похожие товары
+.similarTitle {
+  font-size: 26px;
+  font-weight: 700;
+  margin: 40px 0 24px 0;
+  color: #222;
+  font-family: 'Jost', sans-serif;
+  letter-spacing: 0;
+}
+.similarList {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 40px;
+}
+.similarCard {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px #0001;
+  padding: 18px;
+  width: 220px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 12px;
+  }
+  .title {
+    font-weight: 600;
+    font-size: 18px;
+    color: #222;
+    margin-bottom: 4px;
+  }
+  .meta {
+    color: #B0B0B0;
+    font-size: 14px;
+    margin-bottom: 4px;
+  }
+  .price {
+    color: #222;
+    font-weight: 700;
+    font-size: 18px;
+    margin-bottom: 8px;
+  }
+  .btn {
+    width: 100%;
+    background: #FF7A00;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 0;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-bottom: 6px;
+  }
+}
+
+// Медиа-запросы для адаптивной верстки
+@media (max-width: 1200px) {
+  .productPageContainer {
+    width: 95%;
+  }
+
+  .productTop {
+    padding: 30px;
+    gap: 30px;
+
+    .productImage {
+      width: 350px;
+      height: 350px;
+    }
+
+    .productInfo {
+      .productTitle {
+        font-size: 28px;
+      }
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .productTop {
+    padding: 24px;
+    gap: 24px;
+
+    .productImage {
+      width: 300px;
+      height: 300px;
+    }
+
+    .productInfo {
+      .productTitle {
+        font-size: 24px;
+      }
+      .productMeta {
+        font-size: 14px;
+      }
+      .currentPrice {
+        font-size: 24px !important;
+      }
+      .productActions {
+        .btn {
+          padding: 14px 0;
+          font-size: 16px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .productTop {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+
+    .productImage {
+      width: 100%;
+      max-width: 400px;
+      height: auto;
+    }
+
+    .productInfo {
+      width: 100%;
+      
+      .productForWho {
+        flex-wrap: wrap;
+        .btn {
+          flex: 1;
+          min-width: 120px;
+        }
+      }
+      
+      .productActions {
+        flex-direction: column;
+        .btn {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .breadcrumbs {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .productPageContainer {
+    width: 100%;
+    padding: 0 15px;
+  }
+
+  .productTop {
+    padding: 16px;
+    border-radius: 16px;
+
+    .productInfo {
+      .productTitle {
+        font-size: 20px;
+      }
+      .productMeta {
+        font-size: 12px;
+      }
+      .productPriceRow {
+        .currentPrice {
+          font-size: 20px !important;
+        }
+        .oldPrice {
+          font-size: 14px;
+        }
+      }
+      .productLinks {
+        font-size: 14px;
+        justify-content: space-between;
+      }
+    }
+  }
+} 
