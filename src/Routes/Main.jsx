@@ -1,5 +1,4 @@
-import { useState } from 'react'
-
+import { useState, useEffect } from 'react';
 import Header from '../Components/Header'
 import Footer from "../Components/Footer";
 import ProductCardContainer from '../Components/ProductCardContainer';
@@ -9,6 +8,32 @@ import Features from '../Components/Features';
 import "../Styles/mainPage.scss";
 
 function MainPage() {
+  const [promoProducts, setPromoProducts] = useState([]);
+  const [popularProducts, setPopularProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        const response = await fetch('http://127.0.0.1:8000/api/products/random/10');
+        const secondResponse = await fetch('http://127.0.0.1:8000/api/products/random/4');
+        if (!response.ok || !secondResponse.ok) {
+          throw new Error('Ошибка при загрузке данных');
+        }
+        const data = await response.json();
+        const secondData = await secondResponse.json();
+        setPromoProducts(data.data);
+        setPopularProducts(secondData.data);
+        console.log(data);
+      } catch (err) {
+        setError(err.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchProducts();
+  }, []);
   const mainBannerContent = {
     title: 'ATOMIC HEART ВСЕГО ОТ 299 РУБЛЕЙ',
     image: 'none',
@@ -46,6 +71,7 @@ function MainPage() {
         <ProductCardContainer 
           header="КЛЮЧИ ИГР"
           showButton={true}
+          productsData={promoProducts}
         />
 
         <Banner bannerContent={blackFridayBannerContent} />
@@ -64,6 +90,7 @@ function MainPage() {
 
         <ProductCardContainer 
           header="ЧАСТО ПОКУПАЮТ"
+          productsData={popularProducts}
         />
       </div>
       <Footer />

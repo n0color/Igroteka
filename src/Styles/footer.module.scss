@@ -10,6 +10,7 @@
     align-items: center;
     height: 100px;
     padding: 0 20px; // Добавляем отступы для мобильных устройств
+    position: relative; // Для позиционирования сообщений
     @media (max-width: 768px) {
       font-size: 16px; // Уменьшаем размер шрифта
       flex-direction: column;
@@ -63,11 +64,58 @@
         color: var(--orange-main);
         border: none;
 
+        &:disabled {
+          opacity: 0.6;
+          cursor: not-allowed;
+        }
+
         @media (max-width: 768px) {
           width: auto; // Делаем ширину кнопки адаптивной
           flex-grow: 1; // Позволяем кнопке занимать доступное пространство
           height: 30px;
         }
+      }
+    }
+
+    .successMessage {
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #4CAF50;
+      color: white;
+      padding: 8px 16px;
+      border-radius: 4px;
+      font-size: 14px;
+      margin-top: 10px;
+      white-space: nowrap;
+      z-index: 10;
+      animation: slideDown 0.3s ease-out;
+
+      @media (max-width: 768px) {
+        font-size: 12px;
+        padding: 6px 12px;
+      }
+    }
+
+    .errorMessage {
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #f44336;
+      color: white;
+      padding: 8px 16px;
+      border-radius: 4px;
+      font-size: 14px;
+      margin-top: 10px;
+      white-space: nowrap;
+      z-index: 10;
+      animation: slideDown 0.3s ease-out;
+
+      @media (max-width: 768px) {
+        font-size: 12px;
+        padding: 6px 12px;
       }
     }
   }
@@ -129,5 +177,16 @@
         }
       }
     }
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
   }
 }

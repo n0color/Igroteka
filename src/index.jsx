@@ -12,6 +12,7 @@ import Catalog from './Routes/Catalog.jsx';
 import Product from './Routes/Product.jsx';
 import ErrorPage404 from './Routes/ErrorPage404.jsx';
 import Store from './Routes/Store.jsx';
+
 const Router = createBrowserRouter([
   {
     path: '/',
@@ -32,10 +33,8 @@ const Router = createBrowserRouter([
   },
 ])
 
-
-
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <RouterProvider router={Router} />
+      <RouterProvider router={Router} />
   </StrictMode>,
 )

@@ -134,6 +134,26 @@ $border-color: #EAEBED;
         border-color: var(--orange-main);
       }
 
+      &.inCart {
+        background-color: #4CAF50;
+        border-color: #4CAF50;
+
+        &:hover {
+          background-color: #45a049;
+        }
+
+        img {
+          display: none;
+        }
+
+        &::after {
+          content: '✓';
+          color: white;
+          font-size: 24px;
+          font-weight: bold;
+        }
+      }
+
       @media (max-width: 1024px) {
         width: 48px;
         height: 48px;

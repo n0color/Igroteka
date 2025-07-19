@@ -14,7 +14,7 @@ const Banner = ({ bannerContent }) => {
         </Link>
       </div>
     {image !== 'none' && (
-        <img src={image} alt={title} />
+        <img src={image} alt={title} loading="lazy" />
     )}
     </div>
   );
